@@ -43,8 +43,8 @@ stop:
 }
 
 double* single_read(uint8_t low_chan, uint8_t high_chan){
-	const int nchans = high_chan - low_chan + 1;
-	double ch_vals[nchans];
+	const  int    nchans = high_chan - low_chan + 1;
+	static double ch_vals[nchans];
 
 	// Read a single value from each selected channel
 	int idx = 0;
@@ -65,7 +65,7 @@ stop:
 	    ch_vals[idx] = -999.9; idx++;
 	}
 
-	return &ch_vals;
+	return ch_vals;
 }
 
 int finalize(){
