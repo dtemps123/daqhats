@@ -59,7 +59,7 @@ double* single_read(){
 stop:
     result = mcc118_close(address);
     print_error(result);
-    for (ch = low_chan; ch <= high_chan; ch++)
+    for (ch = 0; ch < 8; ch++)
 	{
 	    ch_vals[idx] = -999.9; idx++;
 	}
