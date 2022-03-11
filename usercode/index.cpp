@@ -2,7 +2,7 @@
 #include "mcc118_single_read.h"
 
 // native C++ function that is assigned to 'setup' property on 'exports' object
-Napi::Number setup(const Napi::CallbackInfo& info) {
+Napi::Number Setup(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   // call 'setup' function from 'mcc118_single_read.cpp' file
@@ -14,7 +14,7 @@ Napi::Number setup(const Napi::CallbackInfo& info) {
 }
 
 // native C++ function that is assigned to 'single_read' property on 'exports' object
-Napi::Array single_read(const Napi::CallbackInfo& info) {
+Napi::Array SingleRead(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   // call 'setup' function from 'mcc118_single_read.cpp' file
@@ -33,7 +33,7 @@ Napi::Array single_read(const Napi::CallbackInfo& info) {
 }
 
 // native C++ function that is assigned to 'finalize' property on 'exports' object
-Napi::Number finalize(const Napi::CallbackInfo& info) {
+Napi::Number Finalize(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   // call 'setup' function from 'mcc118_single_read.cpp' file
@@ -49,18 +49,18 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
   
   exports.Set(
     Napi::String::New(env, "setup"),
-    Napi::Function::New<setup>(env)
+    Napi::Function::New(env, Setup)
   );
   
-  // exports.Set(
-  //   Napi::String::New(env, "single_read"),
-  //   Napi::Function::New(env, single_read)
-  // );
+  exports.Set(
+    Napi::String::New(env, "single_read"),
+    Napi::Function::New(env, SingleRead)
+  );
   
-  // exports.Set(
-  //   Napi::String::New(env, "finalize"),
-  //   Napi::Function::New(env, finalize)
-  // );
+  exports.Set(
+    Napi::String::New(env, "finalize"),
+    Napi::Function::New(env, Finalize)
+  );
 
   return exports;
 }
