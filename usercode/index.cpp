@@ -14,7 +14,7 @@ Napi::Int setup(const Napi::CallbackInfo& info) {
 }
 
 // native C++ function that is assigned to 'single_read' property on 'exports' object
-Napi::Double* setup(const Napi::CallbackInfo& info) {
+Napi::Array setup(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   // call 'setup' function from 'mcc118_single_read.cpp' file
@@ -22,7 +22,7 @@ Napi::Double* setup(const Napi::CallbackInfo& info) {
   double* result = single_read(  );
 
   //return new 'Napi::Double*' value
-  return Napi::Double*::New(env, result);
+  return Napi::Array::New(env, result);
 }
 
 // native C++ function that is assigned to 'finalize' property on 'exports' object
