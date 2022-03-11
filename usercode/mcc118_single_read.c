@@ -1,5 +1,18 @@
 #include "mcc118_single_read.h"
 
+uint8_t address;
+uint8_t ch  = 0;
+uint32_t options = OPTS_DEFAULT;
+double value;
+
+char display_string[256] = "";
+char c;
+
+int result              = RESULT_SUCCESS;
+int samples_per_channel = 0;
+int sample_interval     = 500;  // ms
+int mcc118_num_channels = 0;
+
 int setup(){
 	// Pull the number of channels for this board
 	mcc118_num_channels = mcc118_info()->NUM_AI_CHANNELS;
