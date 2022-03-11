@@ -44,7 +44,7 @@ stop:
 
 double* single_read(uint8_t low_chan, uint8_t high_chan){
 	const int nchans = high_chan - low_chan + 1;
-	double ch_vals[nchans] = {0};
+	double ch_vals[nchans];
 
 	// Read a single value from each selected channel
 	int idx = 0;
@@ -60,6 +60,10 @@ double* single_read(uint8_t low_chan, uint8_t high_chan){
 stop:
     result = mcc118_close(address);
     print_error(result);
+    for (ch = low_chan; ch <= high_chan; ch++)
+	{
+	    ch_vals[idx] = -999.9; idx++;
+	}
 
 	return &ch_vals;
 }
