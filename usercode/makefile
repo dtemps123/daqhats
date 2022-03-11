@@ -1,4 +1,4 @@
-NAME = mcc118_single_read.h
+NAME = mcc118_single_read
 OBJ = $(NAME).o
 LIBS = -ldaqhats
 CFLAGS = -Wall -I/usr/local/include -I./ -g
