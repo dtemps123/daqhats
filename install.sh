@@ -30,6 +30,11 @@ make -C examples/c all
 
 echo
 
+# Build usercode
+make -C usercode all
+
+echo
+
 # Read HAT EEPROMs to /etc/mcc/hats
 echo "Reading DAQ HAT EEPROMs"
 echo
