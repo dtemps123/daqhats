@@ -21,8 +21,15 @@ Napi::Array setup(const Napi::CallbackInfo& info) {
   // WARNING: We are passing a hard coded value for name
   double* result = single_read(  );
 
-  //return new 'Napi::Double*' value
-  return Napi::Array::New(env, result);
+  // create an array which we will return
+  Napi::Array outres = Napi::Array::New(env, 8);
+
+  for (int i=0; i<8; i++){
+    outres[i] = result[i];
+  }
+
+  //return new 'Napi::Array' value
+  return outres; // Napi::Array::Array(env, result);
 }
 
 // native C++ function that is assigned to 'finalize' property on 'exports' object
