@@ -14,7 +14,7 @@ Napi::Number setup(const Napi::CallbackInfo& info) {
 }
 
 // native C++ function that is assigned to 'single_read' property on 'exports' object
-Napi::Array setup(const Napi::CallbackInfo& info) {
+Napi::Array single_read(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   // call 'setup' function from 'mcc118_single_read.cpp' file
