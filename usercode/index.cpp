@@ -2,7 +2,7 @@
 #include "mcc118_single_read.h"
 
 // native C++ function that is assigned to 'setup' property on 'exports' object
-Napi::Value setup(const Napi::CallbackInfo& info) {
+Napi::Number setup(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   // call 'setup' function from 'mcc118_single_read.cpp' file
@@ -10,7 +10,7 @@ Napi::Value setup(const Napi::CallbackInfo& info) {
   int result = setup(  );
 
   //return new 'Napi::Number' value
-  return Napi::Value::New(env, result);
+  return Napi::Number::New(env, result);
 }
 
 // native C++ function that is assigned to 'single_read' property on 'exports' object
