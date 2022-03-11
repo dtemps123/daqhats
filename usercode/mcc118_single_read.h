@@ -11,9 +11,9 @@ char c;
 int result              = RESULT_SUCCESS;
 int samples_per_channel = 0;
 int sample_interval     = 500;  // ms
-int mcc118_num_channels = mcc118_info()->NUM_AI_CHANNELS;
+const int mcc118_num_channels = mcc118_info()->NUM_AI_CHANNELS;
 
-int     setup(int low_chan, int high_chan)
+int     setup(int low_chan, int high_chan);
 double* single_read(int low_chan, int high_chan); 
 int     finalize();
 
