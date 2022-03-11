@@ -17,8 +17,8 @@
         "./lib/mcc172.c",
         "./lib/nist.c",
         "./lib/util.c",
-        "./tools/daqhats_check_152.c",
-        "./tools/daqhats_list_boards.c",
+        # "./tools/daqhats_check_152.c",
+        # "./tools/daqhats_list_boards.c",
         # "./tools/mcc118_update_firmware.c",
         # "./tools/mcc128_update_firmware.c",
         # "./tools/mcc172_update_firmware.c",
@@ -30,7 +30,7 @@
         "./lib",
         "./include",
 	      "./examples/c",
-        "./tools"
+        # "./tools"
       ],
       'defines': [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ],
     }
