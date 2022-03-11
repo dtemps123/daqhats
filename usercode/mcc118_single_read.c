@@ -1,6 +1,6 @@
 #include "mcc118_single_read.h"
 
-int setup(int low_chan, int high_chan){
+int setup(uint8_t low_chan, uint8_t high_chan){
 	// Pull the number of channels for this board
 	mcc118_num_channels = mcc118_info()->NUM_AI_CHANNELS;
 
@@ -42,9 +42,9 @@ stop:
 	return 0;
 }
 
-double* single_read(int low_chan, int high_chan){
+double* single_read(uint8_t low_chan, uint8_t high_chan){
 	const int nchans = high_chan - low_chan + 1;
-	double ch_vals[nchans];
+	double ch_vals[nchans] = {0};
 
 	// Read a single value from each selected channel
 	int idx = 0;
