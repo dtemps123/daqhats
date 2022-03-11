@@ -31,7 +31,7 @@ int setup(){
 
 	printf("\nMCC 118 single data value read example\n");
 	printf("    Function demonstrated: mcc118_a_in_read\n");
-	printf("    Channels: %d - %d\n", low_chan, high_chan);
+	// printf("    Channels: %d - %d\n", low_chan, high_chan);
 	convert_options_to_string(options, display_string);
 	printf("    Options: %s\n", display_string);
 
