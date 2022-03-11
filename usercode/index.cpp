@@ -2,15 +2,15 @@
 #include "mcc118_single_read.h"
 
 // native C++ function that is assigned to 'setup' property on 'exports' object
-Napi::Int setup(const Napi::CallbackInfo& info) {
+Napi::Number setup(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   // call 'setup' function from 'mcc118_single_read.cpp' file
   // WARNING: We are passing a hard coded value for name
   int result = setup(  );
 
-  //return new 'Napi::Int' value
-  return Napi::Int::New(env, result);
+  //return new 'Napi::Number' value
+  return Napi::Number::New(env, result);
 }
 
 // native C++ function that is assigned to 'single_read' property on 'exports' object
@@ -33,7 +33,7 @@ Napi::Array setup(const Napi::CallbackInfo& info) {
 }
 
 // native C++ function that is assigned to 'finalize' property on 'exports' object
-Napi::Int finalize(const Napi::CallbackInfo& info) {
+Napi::Number finalize(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   // call 'setup' function from 'mcc118_single_read.cpp' file
@@ -41,7 +41,7 @@ Napi::Int finalize(const Napi::CallbackInfo& info) {
   int result = finalize(  );
 
   //return new 'Napi::String' value
-  return Napi::Int::New(env, result);
+  return Napi::Number::New(env, result);
 }
 
 // callback method when module is registered with Node.js
