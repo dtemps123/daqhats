@@ -52,15 +52,15 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
     Napi::Function::New(env, setup)
   );
   
-  exports.Set(
-    Napi::String::New(env, "single_read"),
-    Napi::Function::New(env, single_read)
-  );
+  // exports.Set(
+  //   Napi::String::New(env, "single_read"),
+  //   Napi::Function::New(env, single_read)
+  // );
   
-  exports.Set(
-    Napi::String::New(env, "finalize"),
-    Napi::Function::New(env, finalize)
-  );
+  // exports.Set(
+  //   Napi::String::New(env, "finalize"),
+  //   Napi::Function::New(env, finalize)
+  // );
 
   return exports;
 }
