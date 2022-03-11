@@ -35,6 +35,10 @@ int setup(int low_chan, int high_chan){
 	convert_options_to_string(options, display_string);
 	printf("    Options: %s\n", display_string);
 
+stop:
+    result = mcc118_close(address);
+    print_error(result);
+
 	return 0;
 }
 
@@ -52,6 +56,10 @@ double* single_read(int low_chan, int high_chan){
 	}
 
 	usleep(sample_interval * 1000);
+
+stop:
+    result = mcc118_close(address);
+    print_error(result);
 
 	return &ch_vals;
 }
