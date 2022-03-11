@@ -72,3 +72,16 @@ int finalize(){
     print_error(result);
 	return 0;
 }
+
+int main(){
+	int r;
+	double* vals;
+	r = setup();
+	vals = single_read();
+	for (ch = 0; ch < 8; ch++)
+	{
+	    printf("CH %i: val= %d\n",ch,vals[ch]);
+	}
+	r = finalize();
+	return 0
+}

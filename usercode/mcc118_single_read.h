@@ -16,4 +16,5 @@ int mcc118_num_channels = 0;
 int     setup();//uint8_t low_chan, uint8_t high_chan);
 double* single_read();//uint8_t low_chan, uint8_t high_chan); 
 int     finalize();
+int     main();
 
