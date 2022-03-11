@@ -36,6 +36,7 @@ int setup(){
 	printf("    Options: %s\n", display_string);
 
 stop:
+    printf("Error in setup():\n")
     result = mcc118_close(address);
     print_error(result);
 
@@ -57,6 +58,7 @@ double* single_read(){
 	usleep(sample_interval * 1000);
 
 stop:
+	printf("Error in single_read():\n")
     result = mcc118_close(address);
     print_error(result);
     for (ch = 0; ch < 8; ch++)
