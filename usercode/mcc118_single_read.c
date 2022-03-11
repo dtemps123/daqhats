@@ -27,7 +27,7 @@ int setup(){
 
 	// Open a connection to each device
 	result = mcc118_open(address);
-	STOP_ON_ERROR(result);
+	// STOP_ON_ERROR(result);
 
 	printf("\nMCC 118 single data value read example\n");
 	printf("    Function demonstrated: mcc118_a_in_read\n");
@@ -35,10 +35,10 @@ int setup(){
 	convert_options_to_string(options, display_string);
 	printf("    Options: %s\n", display_string);
 
-stop:
-    printf("Error in setup():\n");
-    result = mcc118_close(address);
-    print_error(result);
+// stop:
+//     printf("Error in setup():\n");
+//     result = mcc118_close(address);
+//     print_error(result);
 
 	return 0;
 }
@@ -51,20 +51,20 @@ double* single_read(){
 	for (ch = 0; ch < 8; ch++)
 	{
 	    result = mcc118_a_in_read(address, ch, options, &value);
-	    STOP_ON_ERROR(result);
+	    // STOP_ON_ERROR(result);
 	    ch_vals[idx] = value; idx++;
 	}
 
 	usleep(sample_interval * 1000);
 
-stop:
-	printf("Error in single_read():\n");
-    result = mcc118_close(address);
-    print_error(result);
-    for (ch = 0; ch < 8; ch++)
-	{
-	    ch_vals[idx] = -999.9; idx++;
-	}
+// stop:
+// 	printf("Error in single_read():\n");
+//     result = mcc118_close(address);
+//     print_error(result);
+//     for (ch = 0; ch < 8; ch++)
+// 	{
+// 	    ch_vals[idx] = -999.9; idx++;
+// 	}
 
 	return ch_vals;
 }
