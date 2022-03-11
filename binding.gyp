@@ -19,9 +19,9 @@
         "./lib/util.c",
         "./tools/daqhats_check_152.c",
         "./tools/daqhats_list_boards.c",
-        "./tools/mcc118_update_firmware.c",
-        "./tools/mcc128_update_firmware.c",
-        "./tools/mcc172_update_firmware.c",
+        # "./tools/mcc118_update_firmware.c",
+        # "./tools/mcc128_update_firmware.c",
+        # "./tools/mcc172_update_firmware.c",
         "./usercode/mcc118_single_read.c",
         "./usercode/index.cpp"
       ],
