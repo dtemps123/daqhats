@@ -80,8 +80,8 @@ int main(){
 	vals = single_read();
 	for (ch = 0; ch < 8; ch++)
 	{
-	    printf("CH %i: val= %d\n",ch,vals[ch]);
+	    printf("CH %i: val= %f\n",ch,vals[ch]);
 	}
 	r = finalize();
-	return 0
+	return 0;
 }
