@@ -1,0 +1,24 @@
+{
+  "name": "daqhats",
+  "version": "1.0.0",
+  "description": "NodeJS package to wrap the low to mid level functions provided by the MCC-118 C libraries",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtemps123/daqhats.git"
+  },
+  "author": "Dylan J Temples",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtemps123/daqhats/issues"
+  },
+  "homepage": "https://github.com/dtemps123/daqhats#readme"
+}
