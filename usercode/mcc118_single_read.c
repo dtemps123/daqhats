@@ -1,23 +1,23 @@
 #include "mcc118_single_read.h"
 
-int setup(uint8_t low_chan, uint8_t high_chan){
+int setup(){
 	// Pull the number of channels for this board
 	mcc118_num_channels = mcc118_info()->NUM_AI_CHANNELS;
 
-	// Ensure low_chan and high_chan are valid
-	if ((low_chan  >= mcc118_num_channels) || 
-	    (high_chan >= mcc118_num_channels))
-	{
-	    fprintf(stderr, "Error: Invalid channel - must be 0 - %d.\n",
-	        mcc118_num_channels - 1);
-	    return -1;
-	}
-	if (low_chan > high_chan)
-	{
-	    fprintf(stderr, "Error: Invalid channels - "
-	        "high_chan must be greater than or equal to low_chan\n");
-	    return -1;
-	}
+	// // Ensure low_chan and high_chan are valid
+	// if ((low_chan  >= mcc118_num_channels) || 
+	//     (high_chan >= mcc118_num_channels))
+	// {
+	//     fprintf(stderr, "Error: Invalid channel - must be 0 - %d.\n",
+	//         mcc118_num_channels - 1);
+	//     return -1;
+	// }
+	// if (low_chan > high_chan)
+	// {
+	//     fprintf(stderr, "Error: Invalid channels - "
+	//         "high_chan must be greater than or equal to low_chan\n");
+	//     return -1;
+	// }
 
 	// Determine the address of the device to be used
 	if (select_hat_device(HAT_ID_MCC_118, &address) != 0)
@@ -42,13 +42,12 @@ stop:
 	return 0;
 }
 
-double* single_read(uint8_t low_chan, uint8_t high_chan){
-	const  int    nchans = high_chan - low_chan + 1;
-	static double ch_vals[nchans];
+double* single_read(){
+	static double ch_vals[8];
 
 	// Read a single value from each selected channel
 	int idx = 0;
-	for (ch = low_chan; ch <= high_chan; ch++)
+	for (ch = 0; ch < 8; ch++)
 	{
 	    result = mcc118_a_in_read(address, ch, options, &value);
 	    STOP_ON_ERROR(result);
