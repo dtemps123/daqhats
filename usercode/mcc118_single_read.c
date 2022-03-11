@@ -1,6 +1,9 @@
 #include "mcc118_single_read.h"
 
 int setup(int low_chan, int high_chan){
+	// Pull the number of channels for this board
+	mcc118_num_channels = mcc118_info()->NUM_AI_CHANNELS;
+
 	// Ensure low_chan and high_chan are valid
 	if ((low_chan  >= mcc118_num_channels) || 
 	    (high_chan >= mcc118_num_channels))
