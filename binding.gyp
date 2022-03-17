@@ -30,9 +30,16 @@
         "./lib",
         "./include",
 	      "./examples/c",
+	"/opt/vc/include",
+	"/usr/include",
+	"/opt/vc/lib"
         # "./tools"
       ],
       'defines': [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ],
+      'cflags_cc': [
+        '-lm',
+        '-lbcm_host'
+      ]
     }
   ]
 }
