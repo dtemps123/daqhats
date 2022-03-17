@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/dtemps123/daqhats/issues"
   },
-  "homepage": "https://github.com/dtemps123/daqhats#readme"
+  "homepage": "https://github.com/dtemps123/daqhats#readme",
+  "dependencies": {
+    "node-addon-api": "^4.3.0"
+  }
 }
